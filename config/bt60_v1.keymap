@@ -4,7 +4,7 @@
 
 / {
 	chosen {
-		zmk,matrix_transform = &ansi_transform;
+		zmk,physical_layout = &layout_60_ansi;
 	};
 
 	keymap {
