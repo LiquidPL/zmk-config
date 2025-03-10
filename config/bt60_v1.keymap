@@ -1,6 +1,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
 	chosen {
@@ -27,16 +28,16 @@
 			sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
 		};
 		raise {
-				// ------------------------------------------------------------------------------------------
-				// |   GRAVE   | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |     DEL     |
-				// | | BT_0 | BT_1 | BT_2 | BT_3 | BT_4 |  |  | INS |  | PSCRN | SLCK | PAUSE_BREAK | RESET |
-				// |     |   |   |   |   |    | LEFT | DOWN | UP | RIGHT | HOME | PGUP |     BOOTLOADER     |
-				// |  VOL_DOWN  | PREV | PLAY | PAUSE | STOP | NEXT |   | MUTE |    | END | PGDN |  VOL_UP  |
-				// |  BT_PRV  |  BT_NXT  |    |                                    |    |    |    | BT_CLR  |
-				// ------------------------------------------------------------------------------------------
+				// -------------------------------------------------------------------------------------------------
+				// |   GRAVE   | F1 | F2 | F3 | F4 | F5 | F6 | F7 | F8 | F9 | F10 | F11 | F12 |         DEL        |
+				// | | BT_0 | BT_1 | BT_2 | BT_3 | BT_4 | OUT_TOG |  | INS |  | PSCRN | SLCK | PAUSE_BREAK | RESET |
+				// |     |   |   |   |   |    | LEFT | DOWN | UP | RIGHT | HOME | PGUP |         BOOTLOADER        |
+				// |  VOL_DOWN  | PREV | PLAY | PAUSE | STOP | NEXT |      | MUTE |      | END | PGDN |   VOL_UP   |
+				// |  BT_PRV  |  BT_NXT  |    |                                           |    |    |    | BT_CLR  |
+				// -------------------------------------------------------------------------------------------------
 			bindings = <
 				&kp GRAVE &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9 &kp  F10  &kp F11 &kp F12   &kp DEL
-				&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &sys_reset
+				&trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &out OUT_TOG &trans &kp INS &trans &kp PSCRN &kp SLCK &kp PAUSE_BREAK &sys_reset
 				&trans    &trans &trans &trans &trans &trans &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp HOME  &kp PG_UP   &bootloader
 				&kp C_VOL_DN &kp C_PREV &kp C_PLAY &kp C_PAUSE &kp C_STOP &kp C_NEXT &trans &kp C_MUTE &trans &kp END &kp PG_DN  &kp C_VOL_UP
 				&bt BT_PRV &bt BT_NXT  &trans              &trans                            &trans   &trans   &trans &bt BT_CLR &trans
